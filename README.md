@@ -13,7 +13,7 @@ It captures *in situ* interferometric information directly from acquired single-
 
 ## ✨ Key Features
 
-* **Complete Workflow:** Handles channel alignment, PSF segmentation, *in situ* retrieval, dynamic model updates, and super-resolution reconstruction.
+* **Complete Workflow:** 4Pi channel alignment, PSF segmentation, *in situ* retrieval, dynamic model updates, and super-resolution reconstruction.
 * **In Situ Modeling:** Constructs 3D PSF models directly from experimental data.
 * **Dynamic Correction:** Estimates cavity-phase-induced and objective-misaligned interferometric aberrations.
 * **GPU Acceleration:** Supports pupil-based 3D localization using Cubic Spline GPU implementation.
