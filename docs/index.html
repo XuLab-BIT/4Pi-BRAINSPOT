@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="4Pi-BRAINSPOT toolbox for interferometric ultra-high-resolution 3D imaging through brain sections.">
+    <title>4Pi-BRAINSPOT</title>
+    <link rel="preload" href="assets/4pi-brainspot-hero.png" as="image">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Site navigation">
+      <a class="brand" href="#top" aria-label="4Pi-BRAINSPOT home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>4Pi-BRAINSPOT</span>
+      </a>
+      <nav>
+        <a href="#workflow">Workflow</a>
+        <a href="#videos">Videos</a>
+        <a href="#install">Install</a>
+        <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img src="assets/4pi-brainspot-hero.png" alt="Scientific illustration of opposing 4Pi microscope objectives imaging a brain tissue slice with a 3D molecular point cloud.">
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">MATLAB toolbox for 4Pi-SMSN reconstruction</p>
+          <h1 id="hero-title">4Pi-BRAINSPOT</h1>
+          <p class="hero-copy">
+            In situ PSF retrieval, dynamic interferometric correction, and GPU-accelerated 3D single-molecule localization for ultra-high-resolution imaging through brain sections.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT/archive/refs/heads/main.zip">Download</a>
+            <a class="button secondary" href="#workflow">View workflow</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="overview" aria-label="Project summary">
+        <div class="metric">
+          <strong>4 channels</strong>
+          <span>p1, s2, p2, s1 interferometric detection</span>
+        </div>
+        <div class="metric">
+          <strong>8 modules</strong>
+          <span>from setup to final 3D display</span>
+        </div>
+        <div class="metric">
+          <strong>GPU path</strong>
+          <span>CUDA-enabled localization and reconstruction</span>
+        </div>
+      </section>
+
+      <section class="split-section" id="workflow">
+        <div>
+          <p class="eyebrow">Reconstruction pipeline</p>
+          <h2>From interferometric raw data to 3D molecular maps</h2>
+          <p>
+            4Pi-BRAINSPOT builds an in situ 4Pi-PSF model directly from experimental single-molecule data, reducing data-model disparity before localization and volume rendering.
+          </p>
+        </div>
+        <ol class="workflow-list">
+          <li><span>01</span><strong>Setup and import</strong><p>Configure optical parameters, camera metadata, and four-channel image stacks.</p></li>
+          <li><span>02</span><strong>Channel alignment</strong><p>Register the p and s detection paths with affine calibration.</p></li>
+          <li><span>03</span><strong>In situ PSF retrieval</strong><p>Segment isolated emitters and retrieve channel-specific 4Pi pupil and PSF models.</p></li>
+          <li><span>04</span><strong>Dynamic correction</strong><p>Estimate cavity phase drift and objective misalignment during acquisition.</p></li>
+          <li><span>05</span><strong>3D localization</strong><p>Run GPU localization, quality filtering, drift correction, and volume alignment.</p></li>
+        </ol>
+      </section>
+
+      <section class="feature-band" aria-label="Capabilities">
+        <div class="feature">
+          <h3>In situ modeling</h3>
+          <p>Derives 3D PSF models from acquired molecular datasets instead of relying only on premeasured beads.</p>
+        </div>
+        <div class="feature">
+          <h3>Dynamic updates</h3>
+          <p>Tracks interferometric aberrations introduced by cavity phase changes and objective misalignment.</p>
+        </div>
+        <div class="feature">
+          <h3>Complete MATLAB GUI</h3>
+          <p>Covers calibration, retrieval, localization, post-processing, and axial color-coded visualization.</p>
+        </div>
+      </section>
+
+      <section class="media-section" id="videos">
+        <div class="section-heading">
+          <p class="eyebrow">Supplementary media</p>
+          <h2>Interactive result previews</h2>
+        </div>
+        <div class="video-grid">
+          <figure>
+            <video controls preload="metadata" playsinline src="assets/videos/brainspot-demo-1.mp4"></video>
+            <figcaption>4Pi-BRAINSPOT demonstration video 1</figcaption>
+          </figure>
+          <figure>
+            <video controls preload="metadata" playsinline src="assets/videos/brainspot-demo-2.mp4"></video>
+            <figcaption>4Pi-BRAINSPOT demonstration video 2</figcaption>
+          </figure>
+          <figure>
+            <video controls preload="metadata" playsinline src="assets/videos/brainspot-demo-3.mp4"></video>
+            <figcaption>4Pi-BRAINSPOT demonstration video 3</figcaption>
+          </figure>
+          <figure>
+            <video controls preload="metadata" playsinline src="assets/videos/brainspot-demo-4.mp4"></video>
+            <figcaption>4Pi-BRAINSPOT demonstration video 4</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="install-section" id="install">
+        <div>
+          <p class="eyebrow">Run locally</p>
+          <h2>Install the toolbox in MATLAB</h2>
+          <p>
+            Download the repository, open <code>4Pi-BRAINSPOT toolbox/main.m</code>, verify that the support path points to the included <code>Support</code> folder, then run the GUI in MATLAB R2019b or later on Windows.
+          </p>
+        </div>
+        <div class="requirements">
+          <h3>Requirements</h3>
+          <ul>
+            <li>Windows 7 or later, 64-bit</li>
+            <li>MATLAB R2019b, 64-bit</li>
+            <li>CUDA 7.5 compatible GPU driver for localization</li>
+          </ul>
+          <div class="resource-links">
+            <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT/blob/main/README.md">Readme</a>
+            <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT/blob/main/4Pi-BRAINSPOT%20software%20instruction.pdf">Software instruction PDF</a>
+            <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT/blob/main/4Pi-BRAINSPOT%20Supplementary%20analysis/4Pi-BRAINSPOT%20Supplementary%20analysis%20Instruction.pdf">Supplementary analysis PDF</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Accompanying software for "Interferometric Ultra-High Resolution 3D Imaging through Brain Sections".</p>
+      <p>Purdue University and Beijing Institute of Technology</p>
+    </footer>
+  </body>
+</html>
