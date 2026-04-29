@@ -1,96 +1,122 @@
-# 4Pi-BRAINSPOT Toolbox
+<p align="center">
+  <img src="docs/assets/4pi-brainspot-hero-v2.png" alt="4Pi-BRAINSPOT microscope and brain-section visualization" width="100%">
+</p>
 
-**Interferometric Ultra-High Resolution 3D Imaging through Brain Sections**
+<h1 align="center">4Pi-BRAINSPOT</h1>
 
-[![MATLAB](https://img.shields.io/badge/MATLAB-R2019b-blue.svg)](https://www.mathworks.com/)
-[![CUDA](https://img.shields.io/badge/CUDA-7.5+-green.svg)](https://developer.nvidia.com/cuda-downloads)
+<p align="center">
+  <strong>Interferometric ultra-high resolution 3D imaging through brain sections</strong>
+</p>
 
-## 📖 General Information
+<p align="center">
+  <a href="https://xulab-bit.github.io/4Pi-BRAINSPOT/"><img alt="Project page" src="https://img.shields.io/badge/Project%20Page-4Pi--BRAINSPOT-67e3df"></a>
+  <a href="https://www.nature.com/articles/s41467-026-71614-6"><img alt="Nature Communications" src="https://img.shields.io/badge/Nature%20Communications-2026-f6f1e8"></a>
+  <a href="https://doi.org/10.1038/s41467-026-71614-6"><img alt="DOI" src="https://img.shields.io/badge/DOI-10.1038%2Fs41467--026--71614--6-d9b36b"></a>
+  <a href="https://www.mathworks.com/"><img alt="MATLAB" src="https://img.shields.io/badge/MATLAB-R2019b-blue"></a>
+  <a href="https://developer.nvidia.com/cuda-downloads"><img alt="CUDA" src="https://img.shields.io/badge/CUDA-7.5%2B-green"></a>
+</p>
 
-The **4Pi-BRAINSPOT toolbox** is a software package developed for **in situ point spread function (PSF) retrieval** with 4Pi single-molecule switching nanoscopy (4Pi-SMSN).
+<p align="center">
+  <a href="https://xulab-bit.github.io/4Pi-BRAINSPOT/">Project page</a>
+  ·
+  <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT/archive/refs/heads/main.zip">Download toolbox</a>
+  ·
+  <a href="4Pi-BRAINSPOT%20software%20instruction.pdf">Software instruction</a>
+  ·
+  <a href="4Pi-BRAINSPOT%20Supplementary%20analysis/4Pi-BRAINSPOT%20Supplementary%20analysis%20Instruction.pdf">Supplementary analysis</a>
+</p>
 
-It captures *in situ* interferometric information directly from acquired single-molecule datasets, allowing for the generation of an *in situ* 4Pi-PSF model that minimizes data-model disparity. The toolbox features a user-friendly interface that covers the entire 4Pi reconstruction workflow.
+## Overview
 
-## ✨ Key Features
+**4Pi-BRAINSPOT** is a MATLAB toolbox accompanying the manuscript
+**"Interferometric ultra-high resolution 3D imaging through brain sections."**
+It reconstructs nanoscale 3D molecular information from 4Pi single-molecule
+switching nanoscopy datasets by combining in situ coherent PSF retrieval,
+dynamic interferometric correction, GPU localization, drift correction, and
+volume visualization.
 
-* **Complete Workflow:** 4Pi channel alignment, PSF segmentation, *in situ* retrieval, dynamic model updates, and super-resolution reconstruction.
-* **In Situ Modeling:** Constructs 3D PSF models directly from experimental data.
-* **Dynamic Correction:** Estimates cavity-phase-induced and objective-misaligned interferometric aberrations.
-* **GPU Acceleration:** Supports pupil-based 3D localization using Cubic Spline GPU implementation.
-* **Post-Processing:** Includes 3D drift correction, volume alignment, and data visualization.
-* **Camera Support:** Supports both EMCCD and sCMOS camera modes (with calibration).
+The project page hosts the article links and supplementary movies:
+**https://xulab-bit.github.io/4Pi-BRAINSPOT/**
 
-## 💻 System Requirements
+## What It Does
 
-To ensure the software runs correctly, please verify the following environment:
+| Capability | Purpose |
+| --- | --- |
+| Four-channel import | Load p1, s2, p2, and s1 interferometric image stacks with camera metadata. |
+| Channel alignment | Register detection paths using affine transforms or fresh calibration data. |
+| In situ 4Pi PSF retrieval | Recover sample-aware coherent PSF models directly from molecular datasets. |
+| Dynamic model update | Estimate cavity phase shifts and objective-misalignment changes over time. |
+| CUDA localization | Run pupil-based 3D localization with GPU acceleration. |
+| Post-processing | Perform rejection, 3D drift correction, volume alignment, and axial color display. |
 
-* **Operating System:** Windows 7 or later (64-bit).
-* **Software:** MATLAB R2019b (64-bit).
-* **Hardware:** CUDA 7.5 compatible graphics driver (required for GPU-based localization).
+## Key Results
 
-## 🚀 Installation
+- Sub-15 nm 3D molecular resolution in thick brain sections.
+- 50 um mouse brain slices with tissue clearing and light-sheet illumination.
+- 6.4 nm lateral and 2.9 nm axial localization precision reported in the manuscript.
+- 4Pi-INSPR workflow for in situ coherent PSF retrieval.
 
-1.  **Unzip the Package:**
-    Unzip the `4Pi-BRAINSPOT toolbox.zip` file. You will see three folders: `4Pi-BRAINSPOT toolbox`, `Support`, and `Data_4Pi`.
+## Repository Layout
 
-2.  **Configure Paths:**
-    Open the `main.m` file located in the `4Pi-BRAINSPOT toolbox` folder. Check the `support path` variable to ensure it correctly points to the `Support` folder.
+```text
+4Pi-BRAINSPOT toolbox/        MATLAB GUI and reconstruction workflow
+Support/                      Helper functions, PSF toolbox, SR/sCMOS utilities
+Data_4pi/                     Demo data and calibration files
+4Pi-BRAINSPOT Supplementary analysis/
+                              Companion analysis scripts and instruction PDF
+docs/                         GitHub Pages site and supplementary videos
+```
 
-3.  **Launch:**
-    Run the `main.m` file in MATLAB to start the GUI.
+## Requirements
 
-## 🛠️ Step-by-Step Guide
+- Windows 7 or later, 64-bit.
+- MATLAB R2019b, 64-bit.
+- CUDA 7.5 compatible graphics driver for GPU-based localization.
+- A CUDA-capable GPU is required for the localization module.
 
-The interface is divided into eight modules:
+## Quick Start
 
-### 1. Setup
-Configure the workspace and general parameters, including:
-* Pixel size and Numerical Aperture (NA).
-* Refractive indices (immersion and sample media).
-* Camera settings (Gain, Offset, and optional sCMOS calibration).
+1. Download or clone this repository.
+2. Open MATLAB and switch to the repository folder.
+3. Open `4Pi-BRAINSPOT toolbox/main.m`.
+4. Confirm that the support path points to the `Support` folder.
+5. Run `main.m` to launch the GUI.
 
-### 2. Data Import
-Import single-molecule interferometric datasets from the 4 detection channels (p1, s2, p2, s1).
-* *Option:* Enable background subtraction using temporal median filtering.
+## Workflow
 
-### 3. Channel Alignment
-Align image stacks from the 4 detection channels to the same region of interest.
-* Calculate affine transformations or import an existing calibration file (`tform`).
+1. **Setup** - Configure pixel size, NA, refractive indices, camera gain/offset, and optional sCMOS calibration.
+2. **Data Import** - Import four detection-channel stacks and optionally apply temporal median background subtraction.
+3. **Channel Alignment** - Align channels with calculated or imported affine transforms.
+4. **4Pi PSF Segmentation** - Crop isolated molecular sub-regions for PSF model construction.
+5. **In Situ PSF Retrieval** - Estimate pupil magnitude, pupil phase, Zernike coefficients, and retrieved 4Pi PSFs.
+6. **Dynamic Model Update** - Correct time-varying cavity phase and objective mismatch.
+7. **4Pi Localization** - Run GPU localization, quality rejection, drift correction, and volume alignment.
+8. **Display** - Render x-y views with molecules color-coded by axial position.
 
-### 4. 4Pi-PSF Segmentation
-Crop pairs of sub-regions containing single molecules to construct a PSF library.
-* Adjust `Box size`, `Dist thresh`, and `Seg thresh` to ensure isolated molecules are selected.
+## Demo Data
 
-### 5. 4Pi In Situ PSF Retrieval
-Generate an *in situ* 4Pi-PSF model directly from the segmented sub-regions.
-* This module uses iterative coherent 4Pi phase retrieval to estimate pupil functions.
-* Outputs: Retrieved 4Pi-PSFs, pupil magnitude/phase, and Zernike coefficients.
+The `Data_4pi` folder includes a compact demonstration dataset:
 
-### 6. Dynamic Model Update
-Estimate time-varying interferometric aberrations caused by cavity phase shifts and objective misalignment.
+- `rawData_4Pi.mat` - sample 4Pi single-molecule dataset.
+- `config_4Pi.mat` - general setting parameters.
+- `tform_all.mat` - alignment calibration file.
+- `sCMOS_calibration_4Pi.mat` - sCMOS calibration parameters.
+- `recon4Pi.mat` - sample reconstruction result.
 
-### 7. 4Pi Localization
-Reconstruct the 3D super-resolution image.
-* **Note:** This module requires a CUDA-compatible GPU.
-* Includes segmentation, rejection (based on photon count, LLR, uncertainty), 3D drift correction, and volume alignment.
+## Citation
 
-### 8. Display
-Generate x-y views of the reconstructed volume where molecules are color-coded by their axial (z) position.
+If this toolbox supports your work, please cite:
 
-## 📂 Demo Dataset
+> Hao-Cheng Gao, Fan Xu, Xi Cheng, Tailong Chen, Cheng Bi, Yue Zheng, Yilun Li,
+> Yumian Li, Alexander A. Chubykin, and Fang Huang.
+> **Interferometric ultra-high resolution 3D imaging through brain sections.**
+> *Nature Communications* (2026).
+> https://doi.org/10.1038/s41467-026-71614-6
 
-A demonstration dataset is provided in the `Data_4Pi` folder:
-* `rawData_4Pi.mat`: Sample 4Pi single-molecule dataset.
-* `config_4Pi.mat`: General setting parameters.
-* `tform_all.mat`: Alignment calibration file.
-* `SCMOS_calibration_4Pi.mat`: sCMOS calibration parameters.
-* `recon4Pi.mat`: Sample reconstruction results.
+## Authors
 
-## 👥 Authors
+This software is developed as companion code for the 4Pi-BRAINSPOT manuscript.
 
-This toolbox is accompanying software for the manuscript **"Interferometric Ultra-High Resolution 3D Imaging through Brain Sections"**.
-
-* **Affiliations:** Purdue University & Beijing Institute of Technology.
-* **Correspondence:** Fan Xu, Alexander A. Chubykin, Fang Huang.
-
-For further updates, please check the associated Github repository.
+- Purdue University
+- Beijing Institute of Technology
+- Correspondence: Fan Xu, Alexander A. Chubykin, Fang Huang

@@ -3,162 +3,101 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="4Pi-BRAINSPOT toolbox for interferometric ultra-high-resolution 3D imaging through brain sections.">
+    <meta name="description" content="Article information and supplementary videos for 4Pi-BRAINSPOT.">
     <title>4Pi-BRAINSPOT</title>
-    <link rel="preload" href="assets/4pi-brainspot-hero.png" as="image">
+    <link rel="preload" href="assets/videos/brainspot-demo-4.mp4" as="video" type="video/mp4">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="site-header" aria-label="Site navigation">
-      <a class="brand" href="#top" aria-label="4Pi-BRAINSPOT home">
-        <span class="brand-mark" aria-hidden="true"></span>
+    <header class="site-header" aria-label="Project navigation">
+      <a class="brand" href="#" aria-label="4Pi-BRAINSPOT home">
+        <span class="brand-dot" aria-hidden="true"></span>
         <span>4Pi-BRAINSPOT</span>
       </a>
       <nav>
-        <a href="#method">Method</a>
-        <a href="#media">Media</a>
-        <a href="#install">Install</a>
+        <a href="https://www.nature.com/articles/s41467-026-71614-6">Article</a>
+        <a href="#media">Videos</a>
         <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT">GitHub</a>
       </nav>
     </header>
 
-    <main id="top">
+    <main>
       <section class="hero" aria-labelledby="hero-title">
-        <img src="assets/4pi-brainspot-hero.png" alt="Scientific illustration of opposing 4Pi microscope objectives imaging a brain tissue slice with a 3D molecular point cloud.">
-        <div class="hero-tone" aria-hidden="true"></div>
-        <div class="hero-grid">
-          <div class="hero-copy-block">
-            <p class="kicker">Interferometric ultra-high resolution 3D imaging through brain sections</p>
-            <h1 id="hero-title">4Pi-BRAINSPOT</h1>
-            <p class="lead">
-              A MATLAB toolbox for in situ 4Pi-PSF retrieval, dynamic interferometric correction, and GPU-accelerated 3D single-molecule reconstruction.
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/4pi-brainspot-hero-v2.png">
+          <source src="assets/videos/brainspot-demo-4.mp4" type="video/mp4">
+        </video>
+        <div class="hero-shade" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <div class="article">
+            <p class="journal">Nature Communications 2026</p>
+            <h1 id="hero-title">Interferometric <br class="mobile-break">ultra-high resolution <br class="mobile-break">3D imaging through <br class="mobile-break">brain sections</h1>
+            <p class="summary">
+              4Pi-BRAINSPOT integrates 4Pi single-molecule switching nanoscopy, dynamic in-situ coherent PSF retrieval, tissue clearing, light-sheet illumination, and molecular-coordinate analysis for nanoscale 3D imaging in thick mouse brain sections.
             </p>
-            <div class="actions">
-              <a class="button primary" href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT/archive/refs/heads/main.zip">Download toolbox</a>
-              <a class="button ghost" href="#media">Watch results</a>
+
+            <div class="links">
+              <a class="primary-link" href="https://www.nature.com/articles/s41467-026-71614-6">Read article</a>
+              <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT">GitHub repository</a>
+              <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT/archive/refs/heads/main.zip">Download toolbox</a>
             </div>
           </div>
-          <aside class="hero-panel" aria-label="Project highlights">
-            <div>
-              <span>01</span>
-              <strong>In situ model generation</strong>
-              <p>Retrieves the 4Pi PSF directly from experimental molecular datasets.</p>
+
+          <div class="hero-side">
+            <div class="meta">
+              <div>
+                <span>Authors</span>
+                <p>Hao-Cheng Gao, Fan Xu, Xi Cheng, Tailong Chen, Cheng Bi, Yue Zheng, Yilun Li, Yumian Li, Alexander A. Chubykin, Fang Huang</p>
+              </div>
+              <div>
+                <span>Affiliations</span>
+                <p>Purdue University · Beijing Institute of Technology</p>
+              </div>
+              <div>
+                <span>DOI</span>
+                <p><a href="https://doi.org/10.1038/s41467-026-71614-6">10.1038/s41467-026-71614-6</a></p>
+              </div>
             </div>
-            <div>
-              <span>02</span>
-              <strong>Dynamic aberration update</strong>
-              <p>Corrects cavity-phase and objective-misalignment changes over time.</p>
+
+            <div class="stats" aria-label="Key results">
+              <div><strong>sub-15 nm</strong><span>3D molecular resolution</span></div>
+              <div><strong>50 &micro;m</strong><span>mouse brain slices</span></div>
+              <div><strong>6.4 / 2.9 nm</strong><span>lateral / axial precision</span></div>
+              <div><strong>4Pi-INSPR</strong><span>in-situ coherent PSF retrieval</span></div>
             </div>
-            <div>
-              <span>03</span>
-              <strong>End-to-end GUI</strong>
-              <p>Guides alignment, segmentation, localization, drift correction, and display.</p>
-            </div>
-          </aside>
+          </div>
         </div>
       </section>
 
-      <section class="manifest">
-        <p>
-          Built as companion software for the manuscript, 4Pi-BRAINSPOT turns four-channel interferometric recordings into axial color-coded 3D reconstructions while keeping the calibration model anchored to the sample itself.
-        </p>
-      </section>
-
-      <section class="method" id="method">
-        <div class="section-intro">
-          <p class="kicker">Method stack</p>
-          <h2>Sample-aware 4Pi reconstruction, organized as a reproducible workflow.</h2>
+      <section class="videos" id="media" aria-label="Supplementary videos">
+        <div class="section-title">
+          <p class="journal">Supplementary videos</p>
+          <h2>4Pi-BRAINSPOT media</h2>
         </div>
-        <div class="method-map" aria-label="4Pi-BRAINSPOT workflow">
-          <article>
-            <span>Acquisition</span>
-            <h3>Four-channel import</h3>
-            <p>Load p1, s2, p2, and s1 image stacks with optical and camera metadata.</p>
-          </article>
-          <article>
-            <span>Calibration</span>
-            <h3>Channel alignment</h3>
-            <p>Register detection paths using affine transformation files or fresh calibration.</p>
-          </article>
-          <article>
-            <span>Model</span>
-            <h3>In situ PSF retrieval</h3>
-            <p>Segment isolated emitters and recover channel-specific pupil and PSF models.</p>
-          </article>
-          <article>
-            <span>Correction</span>
-            <h3>Dynamic update</h3>
-            <p>Estimate interferometric drift from cavity phase shifts and objective mismatch.</p>
-          </article>
-          <article>
-            <span>Output</span>
-            <h3>3D localization</h3>
-            <p>Run CUDA localization, rejection, drift correction, volume alignment, and display.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="data-strip" aria-label="Project facts">
-        <div><strong>4</strong><span>detection channels</span></div>
-        <div><strong>8</strong><span>GUI modules</span></div>
-        <div><strong>sCMOS</strong><span>and EMCCD support</span></div>
-        <div><strong>CUDA</strong><span>GPU localization path</span></div>
-      </section>
-
-      <section class="media" id="media">
-        <div class="section-intro">
-          <p class="kicker">Supplementary media</p>
-          <h2>Result movies embedded with the software release.</h2>
-        </div>
-        <div class="cinema">
-          <figure class="featured-video">
-            <video controls preload="metadata" playsinline src="assets/videos/brainspot-demo-1.mp4"></video>
-            <figcaption>Main reconstruction preview</figcaption>
+        <div class="video-grid">
+          <figure>
+            <video controls autoplay muted loop preload="auto" playsinline src="assets/videos/brainspot-demo-1.mp4"></video>
+            <figcaption>Supplementary video 1</figcaption>
           </figure>
-          <div class="video-stack">
-            <figure>
-              <video controls preload="metadata" playsinline src="assets/videos/brainspot-demo-2.mp4"></video>
-              <figcaption>Supplementary preview 2</figcaption>
-            </figure>
-            <figure>
-              <video controls preload="metadata" playsinline src="assets/videos/brainspot-demo-3.mp4"></video>
-              <figcaption>Supplementary preview 3</figcaption>
-            </figure>
-            <figure>
-              <video controls preload="metadata" playsinline src="assets/videos/brainspot-demo-4.mp4"></video>
-              <figcaption>Supplementary preview 4</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="install" id="install">
-        <div class="section-intro">
-          <p class="kicker">Run the toolbox</p>
-          <h2>Download, configure paths, and launch the MATLAB GUI.</h2>
-        </div>
-        <div class="install-grid">
-          <div class="steps">
-            <ol>
-              <li><span>Download</span> Clone or download the repository from GitHub.</li>
-              <li><span>Configure</span> Open <code>4Pi-BRAINSPOT toolbox/main.m</code> and confirm the <code>Support</code> path.</li>
-              <li><span>Launch</span> Run <code>main.m</code> in MATLAB R2019b or later on 64-bit Windows.</li>
-            </ol>
-          </div>
-          <div class="resources">
-            <h3>Resources</h3>
-            <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT/blob/main/README.md">Readme</a>
-            <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT/blob/main/4Pi-BRAINSPOT%20software%20instruction.pdf">Software instruction PDF</a>
-            <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT/blob/main/4Pi-BRAINSPOT%20Supplementary%20analysis/4Pi-BRAINSPOT%20Supplementary%20analysis%20Instruction.pdf">Supplementary analysis PDF</a>
-            <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT">GitHub repository</a>
-          </div>
+          <figure>
+            <video controls autoplay muted loop preload="auto" playsinline src="assets/videos/brainspot-demo-2.mp4"></video>
+            <figcaption>Supplementary video 2</figcaption>
+          </figure>
+          <figure>
+            <video controls autoplay muted loop preload="auto" playsinline src="assets/videos/brainspot-demo-3.mp4"></video>
+            <figcaption>Supplementary video 3</figcaption>
+          </figure>
+          <figure>
+            <video controls autoplay muted loop preload="auto" playsinline src="assets/videos/brainspot-demo-4.mp4"></video>
+            <figcaption>Supplementary video 4</figcaption>
+          </figure>
         </div>
       </section>
     </main>
 
     <footer>
-      <span>Purdue University and Beijing Institute of Technology</span>
-      <span>Correspondence: Fan Xu, Alexander A. Chubykin, Fang Huang</span>
+      <span>4Pi-BRAINSPOT</span>
+      <span>Interferometric ultra-high resolution 3D imaging through brain sections</span>
     </footer>
   </body>
 </html>
