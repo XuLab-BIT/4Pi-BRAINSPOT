@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://4pi-brainspot.xulab.cc/"><img alt="Project page" src="https://img.shields.io/badge/Project%20Page-4Pi--BRAINSPOT-67e3df"></a>
+  <a href="http://4pi-brainspot.xulab.cc/"><img alt="Project page" src="https://img.shields.io/badge/Project%20Page-4Pi--BRAINSPOT-67e3df"></a>
   <a href="https://www.nature.com/articles/s41467-026-71614-6"><img alt="Nature Communications" src="https://img.shields.io/badge/Nature%20Communications-2026-f6f1e8"></a>
   <a href="https://doi.org/10.1038/s41467-026-71614-6"><img alt="DOI" src="https://img.shields.io/badge/DOI-10.1038%2Fs41467--026--71614--6-d9b36b"></a>
   <a href="https://www.mathworks.com/"><img alt="MATLAB" src="https://img.shields.io/badge/MATLAB-R2019b-blue"></a>
@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://4pi-brainspot.xulab.cc/">Project page</a>
+  <a href="http://4pi-brainspot.xulab.cc/">Project page</a>
   ·
   <a href="https://github.com/XuLab-BIT/4Pi-BRAINSPOT/archive/refs/heads/main.zip">Download toolbox</a>
   ·
@@ -36,10 +36,7 @@ dynamic interferometric correction, GPU localization, drift correction, and
 volume visualization.
 
 The project page hosts the article links and supplementary movies:
-**https://4pi-brainspot.xulab.cc/**
-
-GitHub Pages fallback:
-**https://xulab-bit.github.io/4Pi-BRAINSPOT/**
+**http://4pi-brainspot.xulab.cc/**
 
 ## What It Does
 
