@@ -28,8 +28,8 @@
 
 ## Overview
 
-**4Pi-BRAINSPOT** is a MATLAB toolbox accompanying the manuscript
-**"Interferometric ultra-high resolution 3D imaging through brain sections."**
+**4Pi-BRAINSPOT** is a MATLAB toolbox for
+**interferometric ultra-high resolution 3D imaging through brain sections.**
 It reconstructs nanoscale 3D molecular information from 4Pi single-molecule
 switching nanoscopy datasets by combining in situ coherent PSF retrieval,
 dynamic interferometric correction, GPU localization, drift correction, and
@@ -51,10 +51,10 @@ The project page hosts the article links and supplementary movies:
 
 ## Key Results
 
-- Sub-15 nm 3D molecular resolution in thick brain sections.
-- 50 um mouse brain slices with tissue clearing and light-sheet illumination.
-- 6.4 nm lateral and 2.9 nm axial localization precision reported in the manuscript.
-- 4Pi-INSPR workflow for in situ coherent PSF retrieval.
+- Achieves sub-15 nm 3D molecular resolution in thick brain sections.
+- Enables 3D imaging in 50 um mouse brain slices with tissue clearing and light-sheet illumination.
+- Achieves 6.4 nm lateral and 2.9 nm axial localization precision.
+- Integrates in situ coherent PSF retrieval, dynamic model correction, GPU localization, and 3D visualization in the 4Pi-BRAINSPOT workflow.
 
 ## Repository Layout
 
@@ -115,7 +115,7 @@ If this toolbox supports your work, please cite:
 
 ## Authors
 
-This software is developed as companion code for the 4Pi-BRAINSPOT manuscript.
+This software is developed as companion code for the 4Pi-BRAINSPOT study.
 
 - Purdue University
 - Beijing Institute of Technology
